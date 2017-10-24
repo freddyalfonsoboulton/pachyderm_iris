@@ -1,0 +1,21 @@
+{
+	"pipeline": {
+		"name": "report_results"
+	},
+	"transform":{
+		"image": "freddyaboulton/iris_pipeline:report_results",
+		"cmd" : [
+			"python3",
+			"/code/reporting.py",
+			"/pfs/train_model/",
+			"/pfs/out/"
+			]
+	},
+	"parallelism_spec": {"constant":"1"},
+	"input":{
+		"atom":{
+			"repo": "train_model",
+			"glob": "/"
+		}
+	}
+}

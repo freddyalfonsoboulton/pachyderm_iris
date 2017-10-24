@@ -1,0 +1,23 @@
+{
+  "pipeline": {
+    "name": "model"
+  },
+  "transform": {
+    "image": "freddyaboulton/iris_pipeline:train_model",
+    "cmd": [
+	"python3",
+	"/code/training_model.py",
+	"/pfs/training_data/",
+	"/pfs/out/"
+    ]
+  },
+  "parallelism_spec": {
+    "constant": "1"
+  },
+  "input": {
+    "atom": {
+      "repo": "training_data",
+      "glob": "/"
+    }
+  }
+}
